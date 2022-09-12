@@ -8,7 +8,7 @@ from telebot import types
 bot = telebot.TeleBot(config.token)
 
 
-@bot.message_handler(commands=['check'])
+@bot.message_handler(func=lambda message: message.text == "Показать вакансии")
 def get_vacancy(message):
     raw_data = parse_data()
     data = handel_vacancies(raw_data)
@@ -19,8 +19,6 @@ def get_vacancy(message):
 
     for text in data[:10]:
         bot.send_message(message.chat.id, text, reply_markup=markup)
-
-
 
 
 if __name__ == '__main__':
