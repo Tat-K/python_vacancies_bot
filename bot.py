@@ -1,3 +1,5 @@
+import os
+
 import config
 import telebot
 
@@ -5,7 +7,8 @@ from hh_parsing import parse_data
 from handle_data import handel_vacancies
 from telebot import types
 
-bot = telebot.TeleBot(config.token)
+token = os.environ['token']
+bot = telebot.TeleBot(token)
 
 
 @bot.message_handler(func=lambda message: message.text == "Показать вакансии")
