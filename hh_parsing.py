@@ -7,6 +7,7 @@ def get_page(page=0):
     params = {
         'text': 'python',  # Текст фильтра. В имени должно быть слово "Аналитик"
         'area': 16,  # Поиск ощуществляется по вакансиям города Минск
+        'experience': {'noExperience', 'between1And3'},
         'page': page,  # Индекс страницы поиска на HH
         'per_page': 100,  # Кол-во вакансий на 1 странице
         'period': 1
