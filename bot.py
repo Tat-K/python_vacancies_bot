@@ -26,7 +26,7 @@ def get_vacancy(message):
         bot.send_message(message.chat.id, 'Новых вакансий нет')
     else:
         for text in data[:10]:
-            bot.send_message(message.chat.id, text, parse_mode='html', reply_markup=markup)
+            bot.send_message(message.chat.id, text, reply_markup=markup)
 
 
 
